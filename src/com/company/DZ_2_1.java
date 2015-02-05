@@ -8,11 +8,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 
 /**
- * List all links
+ * My first WebDriver
  */
-public class Second_web_driver {
+public class DZ_2_1 {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "D:\\My_projects\\aut\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","D:\\My_projects\\aut\\chromedriver_win32\\chromedriver.exe");
         WebDriver a = new ChromeDriver();
 
         a.get("https://google.com");
@@ -24,10 +24,20 @@ public class Second_web_driver {
         Thread.sleep(1000);
         WebElement s = a.findElement(By.id("ires"));
         List<WebElement> l = s.findElements(By.tagName("a"));
-        int k;
-        for(k = 0; k < l.size(); k++){
-            WebElement f = l.get(k);
-            System.out.println(f.getAttribute("href"));
+        WebElement f = l.get(0);
+        if(f.getText().equals("QA Factory")){
+            System.out.println("Test name: passed");
         }
+        else {
+            System.out.println("Test name: failed");
+        }
+        if(f.getAttribute("href").equals("http://qafactory.com.ua/")) {
+            System.out.println("Test url: passed");
+        }
+        else {
+            System.out.println("Test url: failed");
+        }
+
+        a.quit();
     }
 }
