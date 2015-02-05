@@ -1,96 +1,88 @@
 package com.company;
-import org.apache.commons.io.FileUtils;
-import org.junit.*;
-import org.junit.rules.TestName;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.io.File;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import java.util.List;
+import java.util.Random;
+
 /**
- * Created by user on 2/2/15.
+ * Created by user on 2/4/15.
  */
-@RunWith(JUnit4.class)
-public class Third_tests {
+public class New_tests_2 {
+    private static String masterXpath = "//tr[td=\"Your master password\"]//input[@type=\"password\"]";
+    private static String pushButton = "//input[@type=\"submit\"]";
+    private static String siteXpath= "//tr[td=\"Site name\"]//input";
+    private static String passwordXpath = "//tr[td=\"Generated password\"]//input";
 
-    boolean testPassed;
-    @Before
-    public void Init() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "D:\\My_projects\\aut\\chromedriver_win32\\chromedriver.exe");
-        TestHelper.driver = new ChromeDriver();
-        New_tests_2.open();
-        Thread.sleep(1000);
-
+    public static void open() {
+        TestHelper.driver.get("http://oxogamestudio.com/passwd.current8.htm");
     }
-    @After
-    public void CleanUp(){
 
-        //    if(!testPassed){
-        //      File scrFile = ((TakesScreenshot) a).getScreenshotAs(OutputType.FILE);
-        //      FileUtils
-        //     }
-        TestHelper.driver.close();
+    public static void setMaster(String i){
+        WebElement n = getData.getValueElement(masterXpath);
+        n.clear();
+        n.sendKeys(i);
     }
-    // Test 1
-    @Test
-    public void MyTest()throws InterruptedException {
 
-        New_tests_2.setSite("angel.net");
+    public static String getMaster(){
+        WebElement name = getData.getValueElement(masterXpath);
+
+        return name.getAttribute("value");
+    }
+
+    public static void setSite(String i){
+        WebElement f = getData.getValueElement(siteXpath);
+        f.clear();
+        f.sendKeys(i);
+    }
+    public static String getSite(){
+        WebElement name = getData.getValueElement(siteXpath);
+        return name.getAttribute("value");
+    }
+
+    public static String getPassword(){
+        WebElement passwd = getData.getValueElement(passwordXpath);
+        return passwd.getAttribute("value");
+    }
+
+    public static void pushButton(){
+        WebElement f = getData.getValueElement(pushButton);
+        f.click();
+    }
+
+    public static String myRandom(Integer val) {
+        String forName = "qwertyuiop[]asdfghjkl;\\zxcvbnm,.";
+        Random r = new Random();
+        String myrandom = "";
+        for(int i=0; i<val; i++){
+            int n = r.nextInt(forName.length());
+            myrandom = myrandom +forName.charAt(n);
+        }
+        return myrandom;
+    }
+
+    public static String myInputPass(Integer i, Integer k)throws InterruptedException{
+        String mymaster = New_tests_2.myRandom(i);
+        String mysite = New_tests_2.myRandom(k);
+        New_tests_2.setMaster( mymaster);
+        New_tests_2.setSite(mysite);
         New_tests_2.pushButton();
         Thread.sleep(1000);
         String passwd = New_tests_2.getPassword();
-        Assert.assertEquals("Is2nfhWTJLvq0@1a", passwd);
 
+        return passwd;
     }
-    // Test 2
-    @Test
-    public void MyTest1()throws InterruptedException {
-
-        New_tests_2.setMaster("asdasd");
-        New_tests_2.setSite("angel.net");
+    public static String myInputPassTest3(Integer i) throws InterruptedException{
+        String mymaster = New_tests_2.myRandom(i);
+        String mysite = "angel.net";
+        New_tests_2.setMaster( mymaster);
+        New_tests_2.setSite( mysite);
         New_tests_2.pushButton();
         Thread.sleep(1000);
-        Thread.sleep(1000);
         String passwd = New_tests_2.getPassword();
-        Assert.assertEquals("B9ya7yayeK/Zn@1a", passwd);
 
-    }
-    // Test 3
-    @Test
-    public void MyTest2()throws InterruptedException {
-
-        String passwd1 = New_tests_2.myInputPassTest3(10);
-        String passwd2 = New_tests_2.myInputPassTest3(10);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Assert.assertNotEquals(passwd1, passwd2);
-
-    }
-    // Test 4
-    @Test
-    public void MyTest3()throws InterruptedException {
-
-        String passwd = New_tests_2.myInputPass(10, 10);
-        String site = New_tests_2.getSite();
-        String master = New_tests_2.getMaster();
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Assert.assertNotEquals("", passwd);
-        Assert.assertNotEquals("", site);
-        Assert.assertNotEquals("", master);
-    }
-
-    // Test 5
-    @Test
-    public void MyTest4()throws InterruptedException {
-        New_tests_2.myInputPass(32, 128);
-        String site = New_tests_2.getSite();
-        String master = New_tests_2.getMaster();
-        Thread.sleep(1000);
-        Thread.sleep(1000);
-        Assert.assertNotEquals("", site);
-        Assert.assertNotEquals("", master);
+        return passwd;
     }
 }
+
