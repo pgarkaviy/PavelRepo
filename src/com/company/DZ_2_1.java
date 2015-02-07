@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class DZ_2_1 {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","D:\\My_projects\\aut\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\pgr\\Desktop\\PAVEL AUTOMATION\\1 INSTRUMENTS\\chromedriver_win32\\chromedriver.exe");
         WebDriver a = new ChromeDriver();
 
         a.get("https://google.com");
