@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
 import java.util.List;
-
+//
 public class DZ_2_2 {
 
     public static void main(String[] args)
