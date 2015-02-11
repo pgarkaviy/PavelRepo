@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 
 /**
- * My first WebDriver // //
+ * My first WebDriver // 
  */   
 public class DZ_2_1 {
     public static void main(String[] args) throws InterruptedException {
