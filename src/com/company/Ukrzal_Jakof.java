@@ -26,8 +26,8 @@ public class Ukrzal_Jakof extends TestHelper{
     @Test
     public void MyTest()throws InterruptedException {
 
-        Ukrzal_classes.setFromStation("Ky");
-        String[] sugg1 = Ukrzal_classes.getSuggestionsFrom();
+        Ukrzal_classes_Jakof.setFromStation("Ky");
+        String[] sugg1 = Ukrzal_classes_Jakof.getSuggestionsFrom();
         Assert.assertEquals("Kyaniv Pereval",sugg1[0]);
         Assert.assertEquals("Kyanivka",sugg1[1]);
         Assert.assertEquals("Kybyntsi",sugg1[2]);
@@ -39,8 +39,8 @@ public class Ukrzal_Jakof extends TestHelper{
         Assert.assertEquals("Kyn",sugg1[8]);
         Assert.assertEquals("Kynnu",sugg1[9]);
 
-        Ukrzal_classes.setTillStation("Ivano");
-        String [] sugg2 = Ukrzal_classes.getSuggestionsTill();
+        Ukrzal_classes_Jakof.setTillStation("Ivano");
+        String [] sugg2 = Ukrzal_classes_Jakof.getSuggestionsTill();
 
 
         Assert.assertTrue(Arrays.binarySearch(sugg2, "Ivano-Frankivsk")>=0);
@@ -52,27 +52,27 @@ public class Ukrzal_Jakof extends TestHelper{
         Assert.assertTrue(Arrays.binarySearch(sugg2, "Ivanovskii")>=0);
 
 
-        String data = Ukrzal_classes.getDepartDate();
+        String data = Ukrzal_classes_Jakof.getDepartDate();
         Assert.assertEquals("02.13.2015", data );
-        Ukrzal_classes.setDepartDate();
-        String data2 = Ukrzal_classes.getDepartDate();
+        Ukrzal_classes_Jakof.setDepartDate();
+        String data2 = Ukrzal_classes_Jakof.getDepartDate();
         Assert.assertEquals("03.08.2015", data2 );
-        Ukrzal_classes.setDepartTime();
-        Ukrzal_classes.setRoundTrip();
-        Ukrzal_classes.pushButton();
+        Ukrzal_classes_Jakof.setDepartTime();
+        Ukrzal_classes_Jakof.setRoundTrip();
+        Ukrzal_classes_Jakof.pushButton();
 
-        Ukrzal_classes.getPopupHelper();
-        String[] messages = Ukrzal_classes.getPopupHelperText();
+        Ukrzal_classes_Jakof.getPopupHelper();
+        String[] messages = Ukrzal_classes_Jakof.getPopupHelperText();
         Assert.assertEquals("Select a departure point from the drop down list", messages[0]);
         Assert.assertEquals("Select your destination from the drop down list", messages[1]);
-        Ukrzal_classes.setPushPopupButton();
+        Ukrzal_classes_Jakof.setPushPopupButton();
 
-        Ukrzal_classes.clearFrom();
-        Ukrzal_classes.clearTo();
+        Ukrzal_classes_Jakof.clearFrom();
+        Ukrzal_classes_Jakof.clearTo();
 
-        Ukrzal_classes.setFromStation("Kiev");
-        Ukrzal_classes.setTillStation("Ivano-Frankivsk");
-        Ukrzal_classes.pushButton();
+        Ukrzal_classes_Jakof.setFromStation("Kiev");
+        Ukrzal_classes_Jakof.setTillStation("Ivano-Frankivsk");
+        Ukrzal_classes_Jakof.pushButton();
 
 
 

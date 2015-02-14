@@ -58,24 +58,24 @@ public class Angel_net_Jakof {
     }
 
     public static String myInputPass(WebDriver w, Integer i, Integer k)throws InterruptedException{
-        String mymaster = Angel_net.myRandom(i);
-        String mysite = Angel_net.myRandom(k);
-        Angel_net.setMaster(w, mymaster);
-        Angel_net.setSite(w, mysite);
-        Angel_net.pushButton(w);
+        String mymaster = Angel_net_Jakof.myRandom(i);
+        String mysite = Angel_net_Jakof.myRandom(k);
+        Angel_net_Jakof.setMaster(w, mymaster);
+        Angel_net_Jakof.setSite(w, mysite);
+        Angel_net_Jakof.pushButton(w);
         Thread.sleep(1000);
-        String passwd = Angel_net.getPassword(w);
+        String passwd = Angel_net_Jakof.getPassword(w);
 
         return passwd;
     }
     public static String myInputPassTest3(WebDriver w, Integer i) throws InterruptedException{
-        String mymaster = Angel_net.myRandom(i);
+        String mymaster = Angel_net_Jakof.myRandom(i);
         String mysite = "angel.net";
-        Angel_net.setMaster(w, mymaster);
-        Angel_net.setSite(w, mysite);
-        Angel_net.pushButton(w);
+        Angel_net_Jakof.setMaster(w, mymaster);
+        Angel_net_Jakof.setSite(w, mysite);
+        Angel_net_Jakof.pushButton(w);
         Thread.sleep(1000);
-        String passwd = Angel_net.getPassword(w);
+        String passwd = Angel_net_Jakof.getPassword(w);
 
         return passwd;
     }
