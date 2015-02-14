@@ -36,10 +36,10 @@ public class FirstTests {
     @After
     public void CleanUp(){
 
-        //    if(!testPassed){
-        //      File scrFile = ((TakesScreenshot) a).getScreenshotAs(OutputType.FILE);
-        //      FileUtils
-        //     }
+    //    if(!testPassed){
+     //      File scrFile = ((TakesScreenshot) a).getScreenshotAs(OutputType.FILE);
+     //      FileUtils
+   //     }
         a.close();
     }
 
@@ -66,7 +66,7 @@ public class FirstTests {
     }
 
     @Test
-    public void MyTest3(){
+         public void MyTest3(){
 
         WebElement sub = a.findElement(By.xpath("//input[@name='pie_submit']"));
         sub.sendKeys(Keys.ENTER);
@@ -81,7 +81,7 @@ public class FirstTests {
     @Test
     public void MyTest4(){
 
-        RegistrationForm.setFirstName(a, "Alex");
+       RegistrationForm.setFirstName(a, "Alex");
 
     }
 

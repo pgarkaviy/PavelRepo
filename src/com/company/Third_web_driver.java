@@ -26,15 +26,15 @@ public class Third_web_driver {
             String result = a.findElement(By.id("result_box")).getText();
             System.out.println(result);
             if(result.equals(expected[j])){
-                System.out.println("Test passed");
+               System.out.println("Test passed");
 
             }
             else{
-                System.out.println("Test failed");
+               System.out.println("Test failed");
             }
         }
 
-        a.quit();
+       a.quit();
 
     }
 }

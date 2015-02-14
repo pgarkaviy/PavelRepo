@@ -21,7 +21,7 @@ public class Third_tests {
         System.setProperty("webdriver.chrome.driver", "D:\\My_projects\\aut\\chromedriver_win32\\chromedriver.exe");
         TestHelper.driver = new ChromeDriver();
         New_tests_2.open();
-        Thread.sleep(1000);
+
 
     }
     @After
@@ -39,7 +39,7 @@ public class Third_tests {
 
         New_tests_2.setSite("angel.net");
         New_tests_2.pushButton();
-        Thread.sleep(1000);
+
         String passwd = New_tests_2.getPassword();
         Assert.assertEquals("Is2nfhWTJLvq0@1a", passwd);
 
@@ -51,9 +51,9 @@ public class Third_tests {
         New_tests_2.setMaster("asdasd");
         New_tests_2.setSite("angel.net");
         New_tests_2.pushButton();
-        Thread.sleep(1000);
-        Thread.sleep(1000);
+
         String passwd = New_tests_2.getPassword();
+
         Assert.assertEquals("B9ya7yayeK/Zn@1a", passwd);
 
     }
@@ -63,8 +63,7 @@ public class Third_tests {
 
         String passwd1 = New_tests_2.myInputPassTest3(10);
         String passwd2 = New_tests_2.myInputPassTest3(10);
-        Thread.sleep(1000);
-        Thread.sleep(1000);
+
         Assert.assertNotEquals(passwd1, passwd2);
 
     }
@@ -75,8 +74,7 @@ public class Third_tests {
         String passwd = New_tests_2.myInputPass(10, 10);
         String site = New_tests_2.getSite();
         String master = New_tests_2.getMaster();
-        Thread.sleep(1000);
-        Thread.sleep(1000);
+
         Assert.assertNotEquals("", passwd);
         Assert.assertNotEquals("", site);
         Assert.assertNotEquals("", master);
@@ -88,8 +86,7 @@ public class Third_tests {
         New_tests_2.myInputPass(32, 128);
         String site = New_tests_2.getSite();
         String master = New_tests_2.getMaster();
-        Thread.sleep(1000);
-        Thread.sleep(1000);
+
         Assert.assertNotEquals("", site);
         Assert.assertNotEquals("", master);
     }

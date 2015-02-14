@@ -92,4 +92,3 @@ public class SecondTests {
         Assert.assertNotEquals("", master);
     }
 }
-

@@ -20,34 +20,34 @@ public class New_tests_2 {
     }
 
     public static void setMaster(String i){
-        WebElement n = getData.getValueElement(masterXpath);
+        WebElement n = TestHelper.getData.getValueElement(masterXpath);
         n.clear();
         n.sendKeys(i);
     }
 
     public static String getMaster(){
-        WebElement name = getData.getValueElement(masterXpath);
+        WebElement name = TestHelper.getData.getValueElement(masterXpath);
 
         return name.getAttribute("value");
     }
 
     public static void setSite(String i){
-        WebElement f = getData.getValueElement(siteXpath);
+        WebElement f = TestHelper.getData.getValueElement(siteXpath);
         f.clear();
         f.sendKeys(i);
     }
     public static String getSite(){
-        WebElement name = getData.getValueElement(siteXpath);
+        WebElement name = TestHelper.getData.getValueElement(siteXpath);
         return name.getAttribute("value");
     }
 
     public static String getPassword(){
-        WebElement passwd = getData.getValueElement(passwordXpath);
+        WebElement passwd = TestHelper.getData.getValueElement(passwordXpath);
         return passwd.getAttribute("value");
     }
 
     public static void pushButton(){
-        WebElement f = getData.getValueElement(pushButton);
+        WebElement f = TestHelper.getData.getValueElement(pushButton);
         f.click();
     }
 
@@ -76,8 +76,8 @@ public class New_tests_2 {
     public static String myInputPassTest3(Integer i) throws InterruptedException{
         String mymaster = New_tests_2.myRandom(i);
         String mysite = "angel.net";
-        New_tests_2.setMaster( mymaster);
-        New_tests_2.setSite( mysite);
+        New_tests_2.setMaster(mymaster);
+        New_tests_2.setSite(mysite);
         New_tests_2.pushButton();
         Thread.sleep(1000);
         String passwd = New_tests_2.getPassword();
@@ -85,4 +85,3 @@ public class New_tests_2 {
         return passwd;
     }
 }
-

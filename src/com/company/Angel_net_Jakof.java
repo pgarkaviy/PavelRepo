@@ -9,12 +9,12 @@ import java.util.Random;
 /**
  * Created by user on 1/30/15.
  */
-public class Angel_net {
+public class Angel_net_Jakof {
     private static String masterXpath = "//table/tbody/tr[td=\"Your master password\"]/td/input[@name=\"master\"][@type=\"password\"]";
     private static String pushButton = "//input[@type=\"submit\"]";
     private static String passwordXpath = "//input[@name=\"password\"]";
     private static String siteXpath = "//input[@name=\"site\"]";
-    //Some
+
     public static void open(WebDriver w){
         w.get("http://angel.net/~nic/passwd.current.html");
     }
@@ -81,3 +81,4 @@ public class Angel_net {
     }
 
 }
+

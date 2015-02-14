@@ -1,18 +1,18 @@
 package com.company;
 
-        import org.openqa.selenium.By;
-        import org.openqa.selenium.WebDriver;
-        import org.openqa.selenium.WebElement;
-        import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-        import java.util.List;
+import java.util.List;
 
 /**
- * My first WebDriver //
+ * My first WebDriver
  */
-public class DZ_2_1 {
+public class First_web_driver_Jakof {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\pgr\\Desktop\\PAVEL AUTOMATION\\1 INSTRUMENTS\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","D:\\My_projects\\aut\\chromedriver_win32\\chromedriver.exe");
         WebDriver a = new ChromeDriver();
 
         a.get("https://google.com");
