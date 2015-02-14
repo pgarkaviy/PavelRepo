@@ -22,7 +22,7 @@ public class SecondTests {
     public void Init() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "D:\\My_projects\\aut\\chromedriver_win32\\chromedriver.exe");
         a = new ChromeDriver();
-        Angel_net.open(a);
+        Angel_net_Jakof.open(a);
         Thread.sleep(1000);
 
     }
@@ -39,10 +39,10 @@ public class SecondTests {
     @Test
     public void MyTest()throws InterruptedException {
 
-        Angel_net.setSite(a, "angel.net");
-        Angel_net.pushButton(a);
+        Angel_net_Jakof.setSite(a, "angel.net");
+        Angel_net_Jakof.pushButton(a);
         Thread.sleep(1000);
-        String passwd = Angel_net.getPassword(a);
+        String passwd = Angel_net_Jakof.getPassword(a);
         Assert.assertEquals("Is2nfhWTJLvq0@1a", passwd);
 
     }
@@ -50,11 +50,11 @@ public class SecondTests {
     @Test
     public void MyTest1()throws InterruptedException {
 
-        Angel_net.setMaster(a, "asdasd");
-        Angel_net.setSite(a, "angel.net");
-        Angel_net.pushButton(a);
+        Angel_net_Jakof.setMaster(a, "asdasd");
+        Angel_net_Jakof.setSite(a, "angel.net");
+        Angel_net_Jakof.pushButton(a);
         Thread.sleep(1000);
-        String passwd = Angel_net.getPassword(a);
+        String passwd = Angel_net_Jakof.getPassword(a);
         Assert.assertEquals("B9ya7yayeK/Zn@1a", passwd);
 
     }
@@ -62,8 +62,8 @@ public class SecondTests {
     @Test
     public void MyTest2()throws InterruptedException {
 
-        String passwd1 = Angel_net.myInputPassTest3(a, 10);
-        String passwd2 = Angel_net.myInputPassTest3(a, 10);
+        String passwd1 = Angel_net_Jakof.myInputPassTest3(a, 10);
+        String passwd2 = Angel_net_Jakof.myInputPassTest3(a, 10);
 
         Assert.assertNotEquals(passwd1, passwd2);
 
@@ -72,9 +72,9 @@ public class SecondTests {
     @Test
     public void MyTest3()throws InterruptedException {
 
-        String passwd = Angel_net.myInputPass(a, 10, 10);
-        String site = Angel_net.getSite(a);
-        String master = Angel_net.getMaster(a);
+        String passwd = Angel_net_Jakof.myInputPass(a, 10, 10);
+        String site = Angel_net_Jakof.getSite(a);
+        String master = Angel_net_Jakof.getMaster(a);
 
         Assert.assertNotEquals("", passwd);
         Assert.assertNotEquals("", site);
@@ -84,9 +84,9 @@ public class SecondTests {
     // Test 5
     @Test
     public void MyTest4()throws InterruptedException {
-        Angel_net.myInputPass(a, 32, 128);
-        String site = Angel_net.getSite(a);
-        String master = Angel_net.getMaster(a);
+        Angel_net_Jakof.myInputPass(a, 32, 128);
+        String site = Angel_net_Jakof.getSite(a);
+        String master = Angel_net_Jakof.getMaster(a);
 
         Assert.assertNotEquals("", site);
         Assert.assertNotEquals("", master);
