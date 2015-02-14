@@ -27,7 +27,7 @@ public class TestHelper {
     public void Init() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "D:\\My_projects\\aut\\chromedriver_win32\\chromedriver.exe");
         TestHelper.driver = new ChromeDriver();
-        Ukrzal_classes.open();
+        Ukrzal_classes_Jakof.open();
 
 
     }
